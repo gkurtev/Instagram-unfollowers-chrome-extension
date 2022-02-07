@@ -21,11 +21,11 @@ function attachEvents(mainButton) {
     function countFollowers(followersUlInner) {
       followers = Array.from(followersUlInner.children).map((x) => {
         const anchorTag = x.querySelector('span a');
-        const imgSrc = x.querySelector('img').src;
+        const imgSrc = x.querySelector('img')?.src;
 
         return {
-          name: anchorTag.title,
-          url: anchorTag.href,
+          name: anchorTag?.title,
+          url: anchorTag?.href,
           profilePicture: imgSrc,
         };
       });
@@ -36,11 +36,11 @@ function attachEvents(mainButton) {
     function countFollowing(followersUlInner) {
       following = Array.from(followersUlInner.children).map((x) => {
         const anchorTag = x.querySelector('span a');
-        const imgSrc = x.querySelector('img').src;
+        const imgSrc = x.querySelector('img')?.src;
 
         return {
-          name: anchorTag.title,
-          url: anchorTag.href,
+          name: anchorTag?.title,
+          url: anchorTag?.href,
           profilePicture: imgSrc,
         };
       });
